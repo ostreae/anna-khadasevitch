@@ -1,0 +1,555 @@
+﻿<!DOCTYPE html>
+<!-- saved from url=(0042)http://lms.hse.ru/index.php?page=gradebook -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>LMS HSE</title>
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <script src="./LMS HSE_files/jquery.min.js.Без названия"></script>
+        <script>
+            var $j = jQuery.noConflict();
+        </script>
+    <script src="./LMS HSE_files/jquery-ui.min.js.Без названия"></script>
+    <script src="./LMS HSE_files/jquery-ui-timepicker-addon.min.js.Без названия"></script>
+    <script src="./LMS HSE_files/jquery-ui-timepicker-addon-i18n.min.js.Без названия"></script>
+    <script src="./LMS HSE_files/underscore-min.js.Без названия"></script>
+    <script src="./LMS HSE_files/backbone-min.js.Без названия"></script>
+    <script src="./LMS HSE_files/pages.js.Без названия"></script>
+        
+    <link rel="stylesheet" href="./LMS HSE_files/jquery-ui.min.css">
+    <link rel="stylesheet" href="./LMS HSE_files/theme.css">
+    <link rel="stylesheet" href="./LMS HSE_files/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="./LMS HSE_files/jquery-ui-timepicker-addon.min.css">
+    <link rel="stylesheet" href="./LMS HSE_files/pages.css">
+    <link rel="stylesheet" href="./LMS HSE_files/menu.css">
+    <link rel="stylesheet" href="./LMS HSE_files/footer.css">
+    <link rel="stylesheet" href="./LMS HSE_files/gradebook.css">
+    <link rel="icon" type="image/x-icon" href="http://lms.hse.ru/favicon.ico">
+</head>
+    
+<body style="padding-top: 58px; padding-bottom: 0px;"><div id="oe_menu" class="oe_wrapper" style="display: block;">
+    <ul id="oe_menu_user" class="oe_menu" style="float:right;">
+                <li><a href="http://lms.hse.ru/index.php?logout=true" class="padding-home" target="_top"><span class="fa fa-sign-out"></span></a></li>
+        <li class=""><span style="color: #f98012;">Хадасевич Анна Сергеевна</span>
+            <div style="z-index: 1; display: none; left: -265.359px;">
+                <ul class="oe_one">
+                    <li class="oe_photo" style="text-align:center;">
+                        <span style="display:inline-block; height:128px; width:96px;">
+                            <img src="./LMS HSE_files/lms-avatar.png" border="0" alt="Аватар" width="96" height="128">
+                        </span>
+                    </li>
+                    <li style="text-align: center;font-weight: bold;">Хадасевич Анна Сергеевна</li>
+                    <li style="text-align: center;color: #999;">Учащийся</li>
+                </ul>
+                <ul class="oe_double">
+                    <li class="oe_heading"><span class=" fa fa-user">&nbsp;</span> askhadasevich@edu.hse.ru</li>
+                    <li>
+                                                    <a href="http://lms.hse.ru/student.php?ctg=personal">Личный кабинет</a>
+                                            </li>
+                    <li>
+                                                <a href="http://lms.hse.ru/index.php?page=portfolio&amp;user_login=F7aL9eEXvvp_BaiRUWrd1NrXuPFSEEFfr9DCqQH4cyO4m7R8GNLGBhvqn3uVCf4J@">Моё портфолио</a>
+                                            </li>
+                    <li>
+                        <span class="link" onclick="changePreferedDesign(0);">
+                            <span class="fa fa-check-square-o" style="width: 1.4em;"> </span> <span style="color:blue;"> Предпочтение новому дизайну</span>
+                        </span>
+                    </li>
+                                    </ul>
+            </div>
+        </li>
+        <li id="mt_new_msg" onclick="document.location = $j(&#39;#mt_new_msg_count&#39;).attr(&#39;href&#39;);" style="display: list-item;">
+            <span>
+                <span id="mail-in-animator" class="fa fa-envelope mail-in" style="color:#0f2;">&nbsp;</span>
+                <a id="mt_new_msg_count" href="http://lms.hse.ru/student.php?ctg=messages">5</a>
+            </span>
+        </li>
+            </ul>
+
+    <!-- ******************************************************************* -->
+
+    <ul id="oe_menu_main" class="oe_menu">
+        <!-- **** INDEX ***************************************************** -->
+        <li class="li_no_hide"><a href="http://lms.hse.ru/index.php" class="padding-home" target="_top"><span class="fa fa-home"></span></a></li>
+
+        
+        <!-- **** ADMIN ***************************************************** -->
+        
+        <!-- **** LESSONS ***************************************************** -->
+                    <li><span>Дисциплины</span>
+                <div style="display: none;">
+                    <ul class="oe_full">
+                        <li class="oe_heading"><span class=" fa fa-cubes">&nbsp;</span>Дисциплины</li>
+                                                    <li><a href="http://lms.hse.ru/student.php?ctg=lessons">Мои курсы</a></li>
+                                                    <li><a href="http://lms.hse.ru/student.php?ctg=module&amp;op=module_leas">База материалов</a></li>
+                                            </ul>
+                                    </div>
+            </li>
+        
+        <!-- **** TOOLS ***************************************************** -->
+        <li><span>Инструменты</span>
+            <div style="display: none;">
+                                    <!-- **** personaloptions **** -->
+                    <ul class="oe_half">
+                        <li class="oe_heading"><span class=" fa fa-cogs">&nbsp;</span> Инструменты</li>
+                                                    <li><a href="http://lms.hse.ru/student.php?ctg=module&amp;op=module_calendar&amp;calendar=1">Календарь</a></li>
+                                                    <li><a href="http://lms.hse.ru/student.php?ctg=statistics">Отчеты</a></li>
+                                                    <li><a href="http://lms.hse.ru/student.php?ctg=forum">Форумы</a></li>
+                                                    <li><a href="http://lms.hse.ru/student.php?ctg=notices">Новостная лента</a></li>
+                                                    <li><a href="http://lms.hse.ru/student.php?ctg=messages">Сообщения</a></li>
+                                            </ul>
+                    <!-- **** search **** -->
+                    <ul class="oe_half">
+                                    <li class="oe_heading"><span class="fa fa-search"> </span>&nbsp;Поиск</li>
+                    <li>
+                        <span class="search_field link">
+                                                            <form target="mainframe" method="post" action="http://lms.hse.ru/student.php?ctg=lessons&amp;op=search" style="display: inline;">
+                                                                <p>Поиск: <input type="text" name="search_text"></p>
+                                    <input type="hidden" id="current_location" name="current_location" value="http://lms.hse.ru/index.php?page=gradebook">
+                                </form>
+                        </span>
+                    </li>
+                    <li>
+                                                    <a href="http://lms.hse.ru/student.php?ctg=lessons&amp;op=search">Дополнительные параметры поиска</a>
+                                            </li>
+                </ul>
+            </div>
+        </li>
+
+        
+        <!-- **** HELP ***************************************************** -->
+        <li><span>Помощь</span>
+            <div style="display: none;">
+                <ul class="oe_full">
+                    <li class="oe_heading"><span class=" fa fa-book">&nbsp;</span>Справочная документация</li>
+                    <li><a href="http://lms.hse.ru/index.php?page=docs" target="_top">Справочные материалы. Оглавление.</a></li><li><a href="http://lms.hse.ru/index.php?page=docs&amp;page_point=student_start" target="_top">Студентам</a></li><li><a href="http://lms.hse.ru/index.php?page=docs&amp;page_point=professor_start" target="_top">Преподавателям</a></li>                    <li>&nbsp;</li>
+                    <li class="oe_heading"><span class=" fa fa-comments">&nbsp;</span>Служба поддержки</li>
+                    <li><a href="http://lms.hse.ru/index.php?page=contacts" target="_top">Контакты</a></li>
+                    <li><a href="http://lms.hse.ru/index.php?page=helpdesk" target="_top">HelpDesk</a></li>
+                </ul>
+            </div>
+        </li>
+
+        <!-- **** LANG ***************************************************** -->
+        <li class=""><span> <span class="fa fa-language"> </span>&nbsp;RU</span>
+            <div style="z-index: 1; display: none; left: 0px;">
+                <ul class="oe_full">
+                    <li class="oe_heading"><span class=" fa fa-language"> </span>&nbsp;Сменить язык интерфейса</li>
+                    <li><span class="link" onclick="changeLanguage(&#39;english&#39;);"><span class="fa fa-square-o" style="width: 1.4em;"> </span> English</span></li>
+                    <li><span class="link" onclick="changeLanguage(&#39;russian&#39;);"><span class="fa fa-check-square-o" style="width: 1.4em;"> </span> Русский</span></li>
+                </ul>
+            </div>
+        </li>
+
+    </ul>
+</div>
+
+<script type="text/javascript">
+    // проверка активности страницы 
+    // если поддерживается, то будем периодически проверять количество сообщений у пользователя
+    // иначе не будем
+    var supportVisibilityAPI = typeof document.hidden !== "undefined" ? true : false;
+
+    // для формы поиска
+    $j('#current_location').val(window.location);
+    // проверка на тач скрин
+    var isTouch = (('ontouchstart' in window) || (navigator.msMaxTouchPoints > 0));
+//    var isTouch = true;
+
+    if (!isTouch) {
+        // скрипт для меню с мышкой
+        $j(function () {
+            var oe_menu_user = $j('#oe_menu_user');
+            var oe_menu_main = $j('#oe_menu_main');
+            var oe_menu_main_items = oe_menu_main.children('li');
+            var oe_menu_user_items = oe_menu_user.children('li');
+
+            function mouseenter_li_func() {
+                var t = $j(this);
+                var d = t.children('div');
+                t.addClass('slided selected');
+                if(d.length > 0){
+                    t.parent().children('li').not('.slided').children('div').hide();
+                    t.removeClass('slided');
+                    d.css('z-index', '99999').show();
+//                    d.css('z-index', '99999').stop(true, true).slideDown(300, function () {
+//                        t.parent().children('li').not('.slided').children('div').hide();
+//                        t.removeClass('slided');
+//                    });
+                    var ww = $j(window).width();
+                    var tl = t.offset().left;
+                    var dw = d.first().width();
+                    if(ww - tl < dw) {
+                        d.css('left', -(dw - (ww - tl)) + 'px');
+                    } else {
+                        d.css('left', '0px');
+                    }
+                } else {
+                    t.stop(true, true);
+                    t.removeClass('slided');
+                    d.hide();
+                }
+            }
+            function mouseleave_li_func() {
+                var t = $j(this);
+                t.removeClass('selected').children('div').css('z-index', '1');
+            }
+
+            oe_menu_main_items.bind('mouseenter', mouseenter_li_func).bind('mouseleave', mouseleave_li_func);
+            oe_menu_user_items.bind('mouseenter', mouseenter_li_func).bind('mouseleave', mouseleave_li_func);
+
+            function mouseenter_ul_func() {
+                $j(this).addClass('hovered');
+            }
+            function mouseleave_ul_func() {
+                var t = $j(this);
+                t.removeClass('hovered');
+                t.children('li').children('div').hide();
+            }
+
+            oe_menu_main.bind('mouseenter', mouseenter_ul_func).bind('mouseleave', mouseleave_ul_func);
+            oe_menu_user.bind('mouseenter', mouseenter_ul_func).bind('mouseleave', mouseleave_ul_func);
+        });
+    } else {
+        // скрипт для меню без мышки (предполагаем тачскрин)
+        $j(function () {
+            var oe_menu_user = $j('#oe_menu_user');
+            var oe_menu_main = $j('#oe_menu_main');
+            var oe_menu_main_items = oe_menu_main.children('li');
+            var oe_menu_user_items = oe_menu_user.children('li');
+
+            function mouseclick_li_func() {
+                var t = $j(this);
+                var mi = t.parent().children('li');
+                var d = t.children('div');
+                mi.removeClass('slided selected').children('div').css('z-index', '1');
+                t.addClass('slided selected');
+                if(d.length > 0){
+                    mi.not('.slided').children('div').hide();
+                    d.css('z-index', '99999').show();
+//                    d.css('z-index', '99999').stop(true, true).slideDown(300, function () {
+//                        mi.not('.slided').children('div').hide();
+//                    });
+                    var ww = $j(window).width();
+                    var tl = t.offset().left;
+                    var dw = d.first().width();
+                    if(ww - tl < dw) {
+                        d.css('left', -(dw - (ww - tl)) + 'px');
+                    } else {
+                        d.css('left', '0px');
+                    }
+                } else {
+                    t.stop(true, true);
+                    mi.children('div').hide();
+                }
+            }
+
+            oe_menu_main_items.bind('click', mouseclick_li_func);
+            oe_menu_user_items.bind('click', mouseclick_li_func);
+
+
+            function hide_menu_items(menu){
+                menu.removeClass('slided selected').children('div').css('z-index', '1');
+                menu.children('div').hide();
+            }
+
+            $j(document).click( function(event) {
+                if ($j(event.target).closest(oe_menu_main_items).length){
+                    hide_menu_items(oe_menu_user_items);
+                    return;
+                }
+                if ($j(event.target).closest(oe_menu_user_items).length){
+                    hide_menu_items(oe_menu_main_items);
+                    return;
+                }
+                hide_menu_items(oe_menu_user_items);
+                hide_menu_items(oe_menu_main_items);
+                event.stopPropagation();
+            });
+
+        });
+    }
+
+    // периодический опрос LMS на новые сообщения пользователю
+    function mt_get_new_msg_count() {
+        if (supportVisibilityAPI && !document.hidden) {
+            $j.getJSON('/act.php?on=menu&name=get_count_new_messages', function(data){
+                $j.each(data, function(key, val){
+                    if (key === 'msg_count') {
+                        var prev_val = $j('#mt_new_msg_count').text();
+                        $j('#mt_new_msg_count').text(val);
+                        if (val > 0) {
+                            $j('#mt_new_msg').show();
+                            if (prev_val !== val.toString()) {
+                                var el = $j('#mail-in-animator');
+                                var new_el = el.clone(true);
+                                el.before(new_el);
+                                $j(".mail-in:last").remove();
+                            }
+                        } else {
+                            $j('#mt_new_msg').hide();
+                        }
+                    }
+                });
+            });
+        }
+    }
+
+    // учёт изменения высоты
+    function menu_padding() {
+        var menuHeight = $j(".oe_wrapper").height();
+        $j("body").css({"padding-top": menuHeight + "px"});
+    }
+
+    $j(document).ready(menu_padding);
+    $j(window).resize(menu_padding);
+
+    // изменение языка
+    function changeLanguage(language) {
+        $j.post('/act.php?on=menu&name=change_language', {lang_name: language}, function( data ) {
+            document.location.reload(true);
+        });
+    }
+    // изменение языка
+    function changePreferedDesign(use_pages) {
+        $j.post('/act.php?on=menu&name=change_prefered_design', {use_pages: use_pages}, function( data ) {
+            document.location.reload(true);
+        });
+    }
+    // смена роли
+    function changeAccount(login) {
+        $j.getJSON('/act.php?on=menu&name=change_account&login='+login, function(data){
+            $j.each(data, function(key, val){
+                if (key === 'location') {
+                    window.location = val;
+                }
+            });
+        });
+    }
+
+        var isInFrame = (window.location !== window.parent.location) ? true : false;
+    var test_userpage = window.parent.location.toString();
+    if (!isInFrame) {
+        $j('div.oe_wrapper').show(); // показываем меню
+        // запускаем таймер для сообщений
+        var mt_get_new_msg_count_timer = setInterval(mt_get_new_msg_count,
+            60000 );
+                    $j('#mt_new_msg').show();
+            } else {
+        $j('div.oe_wrapper').hide(); // скрываем меню
+    }
+
+</script>
+    
+    <div id="content_wrapper">
+
+
+        <div id="page_content"> 
+
+
+    <div class="content__block block_path">
+        <div class="content__row">
+            <div>
+                <div id="path__left_elements" class="path div_clear">
+                    <span class="block__path" data-link="/index.php?page=gradebook"> <span class="fa fa-line-chart"> </span> Зачётная книжка </span>
+                </div>
+            </div>
+            <div style="float:right;">
+                <div id="path__right_elements" class="path div_clear">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<script>
+// child_title - заголовок элемента пути
+// child_link - ссылка на страницу
+function addPathChild(child_title, child_link) {
+    if (child_title.length > 0) {
+        var c = '<span class="block__path" data-link="' + child_link + '"> ';
+        c += '<span class="fa fa-chevron-right"> </span> ';
+        c += child_title  + ' </span>';
+        var last_in_path = $j('#path__left_elements').children().last();
+        last_in_path.addClass('path_link');
+        last_in_path.click(function(){ document.location = this.getAttribute('data-link'); });
+        $j(c).insertAfter(last_in_path);
+        return true;
+    }
+    return false;
+}
+
+// id - id элемента разметки (рекомендуется вида 'path__right_elements_<имя модуля>_<название_действия>')
+// icon - иконка из Font Awesome
+// onclick_function - фунцкия на действие (onclick - элемента разметки)
+function addPathIcon(id, icon, onclick_function, addition_class) {
+    if (id.length > 0 && onclick_function.length > 0) {
+        icon = icon.length > 0 ? icon : 'fa-cube';
+        var c = '<span id="' + id + '" class="path_icon_link fa ' + icon + ' ' + addition_class + '" onClick="' + onclick_function + ';"> </span>';
+        var last_in_path = $j('#path__right_elements').children().last();
+        children_count = $j('#path__right_elements').children().length;
+        if (children_count > 0){
+            $j(c).insertAfter(last_in_path);
+        } else {
+            $j('#path__right_elements').append(c);
+        }
+        return true;
+    }
+    return false;
+}
+</script>
+
+
+<script type="text/javascript" src="./LMS HSE_files/jquery.dataTables.min.js.Без названия"></script>
+<script type="text/javascript" src="./LMS HSE_files/dataTables.responsive.min.js.Без названия"></script>
+
+<script type="text/javascript">
+    $j(document).ready(function () {
+        $j('.tabl_gb').DataTable({
+            autoWidth: false,
+            ordering: false,
+            info: false,
+            searching: false,
+            paging: false,
+            responsive: true,
+            columns: [
+                {className: "all"},
+                null,
+                null,
+                null,
+                null,
+                {className: "min-mobile-p"},
+                {className: "min-mobile-l"},
+                null,
+                null,
+                {className: "min-tablet-p"}
+            ]
+        });
+
+        $j("#tabs").tabs();
+
+        $j('.gb_periods li').on('click', function () {
+            $j(document).resize();
+        });
+
+        $j('.moduleNumber td').on('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+        });
+    });
+</script>
+
+
+<div class="content__row" style="padding: 0 0.4em;"><div class="c12 pad_xs">
+<div class="content__row">
+    <div class="c12" style="text-align: center;margin-bottom: 0.25em;">
+        <span style="font-weight: 600;">Факультет гуманитарных наук</span> : <span style="font-style:italic;color:#4c8a0a;"> Фундаментальная и компьютерная лингвистика</span>
+    </div>
+</div>
+
+    <div class="content__row">
+        <div class="c12">
+            <div style="font-weight: 400;text-transform: uppercase;text-align: center;padding: 0.25em;">Хадасевич Анна Сергеевна 
+                            </div>
+        </div>
+    </div>
+
+<div class="content__row">
+    <div class="c12" style="text-align: center;margin-bottom: 0.25em;font-weight: 400;font-style:italic;color: #888;">
+        Студент бакалавриата, 2 курс    </div>
+</div>
+
+
+<div class="content__row">
+    <div class="c12" style="margin-top: 0.25em;">
+        <div class="content__row">
+            <span class="c05 va_middle gradebook__avatar_block">
+                <img class="gradebook__avatar" src="./LMS HSE_files/lms-avatar.png">
+            </span>
+            <span class="c05 va_middle gradebook__summary_block">
+                <table class="gradebook__summary_table" style="border: none;">
+                    <tbody><tr>
+                        <td class="fa fa-graduation-cap gradebook__summary_val" style="color:#930;text-align: right;"> 61</td>
+                        <td class="gradebook__summary_str" style="text-align: left;"> Зачтённые кредиты</td>
+                    </tr>
+                    <tr>
+                        <td class="fa fa-clock-o gradebook__summary_val" style="color:#066;text-align: right;"> 2570</td>
+                        <td class="gradebook__summary_str" style="text-align: left;"> Зачтённые часы (общие)</td>
+                    </tr>
+                    <tr>
+                        <td class="fa fa-clock-o gradebook__summary_val" style="color:#099;text-align: right;"> 1092</td>
+                        <td class="gradebook__summary_str" style="text-align: left;"> Зачтённые часы (аудиторные)</td>
+                    </tr>
+                </tbody></table>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div id="tabs" style="font-size: 0.8em; color: #333;" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
+    <ul class="gb_periods ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
+        <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-1" aria-labelledby="ui-id-1" aria-selected="false" aria-expanded="false"><a href="http://lms.hse.ru/index.php?page=gradebook#tabs-1" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-1">2017/2018 уч. год</a></li><li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="0" aria-controls="tabs-2" aria-labelledby="ui-id-2" aria-selected="true" aria-expanded="true"><a href="http://lms.hse.ru/index.php?page=gradebook#tabs-2" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-2">2016/2017 уч. год</a></li>    </ul>
+    <div id="tabs-1" aria-labelledby="ui-id-1" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style="display: none;">        <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper no-footer"><table class="tabl_gb responsive dataTable no-footer dtr-inline collapsed" id="DataTables_Table_0" role="grid">
+            <thead>
+                <tr role="row"><th rowspan="2" class="sorting_disabled all" colspan="1">Дисциплина</th><th colspan="2" rowspan="1">Оценка</th><th rowspan="2" class="sorting_disabled min-tablet-p" colspan="1">Преподаватель</th></tr>
+                <tr role="row"><th class="sorting_disabled min-mobile-p" rowspan="1" colspan="1">10 балльная</th><th class="sorting_disabled min-mobile-l" rowspan="1" colspan="1">5 балльная</th></tr>
+            </thead>
+            <tbody>
+                            <tr class="moduleNumber odd" role="row"><td class=" all">4 модуль</td><td class=" min-mobile-p"></td><td class=" min-mobile-l"></td><td class=" min-tablet-p"></td></tr><tr role="row" class="even"><td class=" all">Курсовые работы</td><td class=" min-mobile-p"></td><td class=" min-mobile-l">-</td><td class=" min-tablet-p"></td></tr><tr role="row" class="odd"><td class=" all">Независимый экзамен по английскому языку (2 курс)<span style="font-weight:bold;"> * </span></td><td class=" min-mobile-p"></td><td class=" min-mobile-l">-</td><td class=" min-tablet-p"></td></tr><tr role="row" class="even"><td class=" all">Практикум по проектированию и разработке лингвистических систем и компонентов</td><td class=" min-mobile-p"></td><td class=" min-mobile-l">-</td><td class=" min-tablet-p"></td></tr><tr role="row" class="odd"><td class=" all">Современный русский язык</td><td class=" min-mobile-p"></td><td class=" min-mobile-l">-</td><td class=" min-tablet-p"></td></tr><tr role="row" class="even"><td class=" all">Теория вероятностей и математическая статистика<span style="font-weight:bold;"> * </span></td><td class=" min-mobile-p"></td><td class=" min-mobile-l">-</td><td class=" min-tablet-p"></td></tr><tr role="row" class="odd"><td class=" all">Физическая культура</td><td class=" min-mobile-p"></td><td class=" min-mobile-l">-</td><td class=" min-tablet-p"></td></tr><tr role="row" class="even"><td class=" all">Элементы русской языковой картины мира<span style="font-weight:bold;"> * </span></td><td class=" min-mobile-p"></td><td class=" min-mobile-l">-</td><td class=" min-tablet-p"></td></tr><tr class="moduleNumber odd" role="row"><td class=" all">3 модуль</td><td class=" min-mobile-p"></td><td class=" min-mobile-l"></td><td class=" min-tablet-p"></td></tr><tr role="row" class="even"><td class=" all">Теория языка</td><td class=" min-mobile-p"></td><td class=" min-mobile-l">-</td><td class=" min-tablet-p"></td></tr><tr class="moduleNumber odd" role="row"><td class=" all">2 модуль</td><td class=" min-mobile-p"></td><td class=" min-mobile-l"></td><td class=" min-tablet-p"></td></tr><tr role="row" class="even"><td class=" all">Английский язык</td><td class=" min-mobile-p"></td><td class=" min-mobile-l">-</td><td class=" min-tablet-p"></td></tr><tr role="row" class="odd"><td class=" all">Линейная алгебра и математический анализ<span style="font-weight:bold;"> * </span></td><td class=" min-mobile-p"></td><td class=" min-mobile-l">-</td><td class=" min-tablet-p"></td></tr><tr role="row" class="even"><td class=" all">Практикум по проектированию и разработке лингвистических систем и компонентов</td><td class=" min-mobile-p"></td><td class=" min-mobile-l">-</td><td class=" min-tablet-p"></td></tr><tr role="row" class="odd"><td class=" all">Социолингвистика<span style="font-weight:bold;"> * </span></td><td class=" min-mobile-p"></td><td class=" min-mobile-l">-</td><td class=" min-tablet-p"></td></tr><tr role="row" class="even"><td class=" all">Структура и функции рассказа, или что такое нарративный дискурс<span style="font-weight:bold;"> * </span></td><td class=" min-mobile-p"></td><td class=" min-mobile-l">-</td><td class=" min-tablet-p"></td></tr><tr role="row" class="odd"><td class=" all">Теория стиха<span style="font-weight:bold;"> * </span></td><td class=" min-mobile-p"></td><td class=" min-mobile-l">-</td><td class=" min-tablet-p"></td></tr><tr role="row" class="even"><td class=" all">Теория языка</td><td class=" min-mobile-p"></td><td class=" min-mobile-l">-</td><td class=" min-tablet-p"></td></tr><tr role="row" class="odd"><td class=" all">Физическая культура</td><td class=" min-mobile-p"></td><td class=" min-mobile-l">-</td><td class=" min-tablet-p"></td></tr><tr class="moduleNumber even" role="row"><td class=" all">1 модуль</td><td class=" min-mobile-p"></td><td class=" min-mobile-l"></td><td class=" min-tablet-p"></td></tr><tr role="row" class="odd"><td class=" all">Теория языка</td><td class=" min-mobile-p"></td><td class=" min-mobile-l">-</td><td class=" min-tablet-p"></td></tr><tr role="row" class="even"><td class=" all">Учебная практика</td><td class=" min-mobile-p"></td><td class=" min-mobile-l">-</td><td class=" min-tablet-p"></td></tr><tr role="row" class="odd"><td class=" all">Экспедиция</td><td class=" min-mobile-p"></td><td class=" min-mobile-l">-</td><td class=" min-tablet-p"></td></tr></tbody>
+        </table></div>
+        <p>* Оценка дисциплины идёт в диплом.</p>        </div><div id="tabs-2" aria-labelledby="ui-id-2" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="false" style="display: block;">        <div id="DataTables_Table_1_wrapper" class="dataTables_wrapper no-footer"><table class="tabl_gb responsive dataTable no-footer dtr-inline" id="DataTables_Table_1" role="grid">
+            <thead>
+                <tr role="row"><th rowspan="2" class="sorting_disabled all" colspan="1">Дисциплина</th><th rowspan="2" class="sorting_disabled" colspan="1">Итоговое испытание</th><th colspan="2" rowspan="1">Часы</th><th rowspan="2" class="sorting_disabled" colspan="1">Кредитов</th><th colspan="2" rowspan="1">Оценка</th><th rowspan="2" class="sorting_disabled" colspan="1">Пересдачи</th><th rowspan="2" class="sorting_disabled" colspan="1">Последняя сдача</th><th rowspan="2" class="sorting_disabled min-tablet-p" colspan="1">Преподаватель</th></tr>
+                <tr role="row"><th class="sorting_disabled" rowspan="1" colspan="1">общ.</th><th class="sorting_disabled" rowspan="1" colspan="1">аудит.</th><th class="sorting_disabled min-mobile-p" rowspan="1" colspan="1">10 балльная</th><th class="sorting_disabled min-mobile-l" rowspan="1" colspan="1">5 балльная</th></tr>
+            </thead>
+            <tbody>
+                            <tr class="moduleNumber odd" role="row"><td class=" all">4 модуль</td><td></td><td></td><td></td><td></td><td class=" min-mobile-p"></td><td class=" min-mobile-l"></td><td></td><td></td><td class=" min-tablet-p"></td></tr><tr role="row" class="even"><td class=" all">Академическое письмо (русский язык)<span style="font-weight:bold;"> * </span></td><td>Экзамен</td><td>152</td><td>48</td><td>4</td><td class=" min-mobile-p">7</td><td class=" min-mobile-l">хорошо</td><td>0</td><td>22-06-2017</td><td class=" min-tablet-p">Ахапкина Я.Э.</td></tr><tr role="row" class="odd"><td class=" all">Английский язык</td><td>Экзамен</td><td>152</td><td>0</td><td>0</td><td class=" min-mobile-p">8</td><td class=" min-mobile-l">хорошо</td><td>0</td><td>24-06-2017</td><td class=" min-tablet-p">Райан С.Х.</td></tr><tr role="row" class="even"><td class=" all">Внутренний экзамен по английскому языку (1 курс)</td><td>Экзамен</td><td>0</td><td>0</td><td>4</td><td class=" min-mobile-p">8</td><td class=" min-mobile-l">отлично</td><td>0</td><td>24-06-2017</td><td class=" min-tablet-p">Виноградова О.И.</td></tr><tr role="row" class="odd"><td class=" all">Дискретная математика<span style="font-weight:bold;"> * </span></td><td>Экзамен</td><td>190</td><td>88</td><td>5</td><td class=" min-mobile-p">5</td><td class=" min-mobile-l">удовлетворительно</td><td>0</td><td>17-06-2017</td><td class=" min-tablet-p">Сахарова Н.Е.</td></tr><tr role="row" class="even"><td class=" all">Древние языки (латинский и старославянский)<span style="font-weight:bold;"> * </span></td><td>Экзамен</td><td>76</td><td>38</td><td>2</td><td class=" min-mobile-p">8</td><td class=" min-mobile-l">отлично</td><td>0</td><td>29-06-2017</td><td class=" min-tablet-p">Бобрик-Фремке М.А., Пенькова Я.А., Чечуро И.Ю.</td></tr><tr role="row" class="odd"><td class=" all">Программирование и компьютерные инструменты лингвистического исследования</td><td>Экзамен</td><td>114</td><td>54</td><td>3</td><td class=" min-mobile-p">6</td><td class=" min-mobile-l">хорошо</td><td>0</td><td>23-06-2017</td><td class=" min-tablet-p">Орехов Б.В.</td></tr><tr role="row" class="even"><td class=" all">Русская грамматика ошибок: эмигрантская речь<span style="font-weight:bold;"> * </span></td><td>Экзамен</td><td>76</td><td>28</td><td>2</td><td class=" min-mobile-p">7</td><td class=" min-mobile-l">хорошо</td><td>0</td><td>30-06-2017</td><td class=" min-tablet-p">Выренкова А.С., Рахилина Е.В.</td></tr><tr role="row" class="odd"><td class=" all">Теория языка</td><td>Экзамен</td><td>190</td><td>92</td><td>8</td><td class=" min-mobile-p">5</td><td class=" min-mobile-l">отлично</td><td>0</td><td>26-06-2017</td><td class=" min-tablet-p">Князев С.В.</td></tr><tr role="row" class="even"><td class=" all">Физическая культура</td><td>Зачет</td><td>50</td><td>50</td><td>0</td><td class=" min-mobile-p">10</td><td class=" min-mobile-l">отлично</td><td>0</td><td>30-06-2017</td><td class=" min-tablet-p">Кубышева Н.Л.</td></tr><tr role="row" class="odd"><td class=" all">Французский язык</td><td>Экзамен</td><td>304</td><td>164</td><td>8</td><td class=" min-mobile-p">8</td><td class=" min-mobile-l">отлично</td><td>0</td><td>20-06-2017</td><td class=" min-tablet-p">Никишина Е.А., Поливанова Д.К.</td></tr><tr role="row" class="even"><td class=" all">Экономика<span style="font-weight:bold;"> * </span></td><td>Экзамен</td><td>152</td><td>8</td><td>4</td><td class=" min-mobile-p">8</td><td class=" min-mobile-l">отлично</td><td>0</td><td>28-06-2017</td><td class=" min-tablet-p">Щукина Л.Б.</td></tr><tr class="moduleNumber odd" role="row"><td class=" all">3 модуль</td><td></td><td></td><td></td><td></td><td class=" min-mobile-p"></td><td class=" min-mobile-l"></td><td></td><td></td><td class=" min-tablet-p"></td></tr><tr role="row" class="even"><td class=" all">Древние языки (латинский и старославянский)</td><td>Экзамен</td><td>190</td><td>86</td><td>5</td><td class=" min-mobile-p">8</td><td class=" min-mobile-l">отлично</td><td>0</td><td>27-03-2017</td><td class=" min-tablet-p">Волков О.С., Файер В.В., Филиппенко М.А.</td></tr><tr class="moduleNumber odd" role="row"><td class=" all">2 модуль</td><td></td><td></td><td></td><td></td><td class=" min-mobile-p"></td><td class=" min-mobile-l"></td><td></td><td></td><td class=" min-tablet-p"></td></tr><tr role="row" class="even"><td class=" all">Английский язык</td><td>Экзамен</td><td>152</td><td>64</td><td>0</td><td class=" min-mobile-p">9</td><td class=" min-mobile-l">отлично</td><td>0</td><td>23-12-2017</td><td class=" min-tablet-p">Выренкова А.С., Тагабилева М.Г.</td></tr><tr role="row" class="odd"><td class=" all">Введение в лингвистику<span style="font-weight:bold;"> * </span></td><td>Экзамен</td><td>228</td><td>96</td><td>6</td><td class=" min-mobile-p">7</td><td class=" min-mobile-l">хорошо</td><td>0</td><td>28-12-2016</td><td class=" min-tablet-p">Волков О.С.</td></tr><tr role="row" class="even"><td class=" all">История<span style="font-weight:bold;"> * </span></td><td>Экзамен</td><td>152</td><td>80</td><td>4</td><td class=" min-mobile-p">7</td><td class=" min-mobile-l">хорошо</td><td>0</td><td>24-12-2016</td><td class=" min-tablet-p">Ильина К.А.</td></tr><tr role="row" class="odd"><td class=" all">Лингвистические и логические задачи<span style="font-weight:bold;"> * </span></td><td>Экзамен</td><td>76</td><td>28</td><td>2</td><td class=" min-mobile-p">10</td><td class=" min-mobile-l">отлично</td><td>0</td><td>27-12-2016</td><td class=" min-tablet-p">Иомдин Б.Л.</td></tr><tr role="row" class="even"><td class=" all">Социология<span style="font-weight:bold;"> * </span></td><td>Экзамен</td><td>152</td><td>80</td><td>4</td><td class=" min-mobile-p">4</td><td class=" min-mobile-l">удовлетворительно</td><td>0</td><td>20-12-2016</td><td class=" min-tablet-p">Оберемко О.А.</td></tr><tr role="row" class="odd"><td class=" all">Физическая культура</td><td>Зачет</td><td>50</td><td>50</td><td>0</td><td class=" min-mobile-p">10</td><td class=" min-mobile-l">отлично</td><td>0</td><td>29-12-2016</td><td class=" min-tablet-p">Кубышева Н.Л.</td></tr><tr class="moduleNumber even" role="row"><td class=" all">1 модуль</td><td></td><td></td><td></td><td></td><td class=" min-mobile-p"></td><td class=" min-mobile-l"></td><td></td><td></td><td class=" min-tablet-p"></td></tr><tr role="row" class="odd"><td class=" all">Безопасность жизнедеятельности<span style="font-weight:bold;"> * </span></td><td>Экзамен</td><td>38</td><td>18</td><td>1</td><td class=" min-mobile-p">10</td><td class=" min-mobile-l">отлично</td><td>0</td><td>25-10-2016</td><td class=" min-tablet-p">Доброхотова Т.С.</td></tr><tr role="row" class="even"><td class=" all">Программирование и компьютерные инструменты лингвистического исследования</td><td>Экзамен</td><td>76</td><td>20</td><td>2</td><td class=" min-mobile-p">9</td><td class=" min-mobile-l">отлично</td><td>0</td><td>24-10-2016</td><td class=" min-tablet-p">Кузьменко Е.А., Ляшевская О.Н., Мустакимова Э.Г.</td></tr></tbody>
+        </table></div>
+        <p>* Оценка дисциплины идёт в диплом.</p>        </div></div>
+        
+</div></div> </div>
+    </div>
+
+
+<div id="footer__block" class="footer__block" style="width: 100%; display: block;">
+    <div class="footer__element">© ВШЭ. Все права защищены. <script>var currentTime = new Date(); document.write(' 2014 - ' + currentTime.getFullYear() + '. ');</script> 2014 - 2017. </div>
+    <div class="footer__element"> <a class="footer__link" href="http://lms.hse.ru/index.php?page=contacts">Служба поддержки</a> работает для пользователей системы.</div>
+    <div class="footer__element"> Техническая поддержка и развитие системы: <a class="footer__link" href="http://it.hse.ru/lms" target="_blank">ДИТ НИУ ВШЭ (LMS)</a></div>
+</div>
+
+<script>
+    function footer_stick() {
+        var bodyHeight = $j("body").height();
+        var vwptHeight = $j(window).height();
+        var footerHeight = $j("#footer__block").height();
+        //alert('footer: body=' + bodyHeight + '; window = ' + vwptHeight + '; footer = ' + footerHeight);
+        if (vwptHeight - footerHeight > bodyHeight) {
+            $j("#footer__block").addClass("footer_stick");
+            $j("body").css({"padding-bottom": footerHeight + "px"});
+        } else {
+            $j("#footer__block").removeClass("footer_stick");
+            $j("body").css({"padding-bottom": "0px"});
+        }
+    }
+
+    $j(document).ready(footer_stick);
+    $j(window).resize(footer_stick);
+
+    var footerIsInFrame = (window.location !== window.parent.location) ? true : false;
+    if (!footerIsInFrame) {
+        $j('#footer__block').show(); // показываем футер
+    } else {
+        $j('#footer__block').hide(); // скрываем футер
+    }
+
+</script>
+
+
+<script>
+    $j(document).ready(function () {
+        addFilesIcons();
+    });
+</script>
+
+
+</body></html>

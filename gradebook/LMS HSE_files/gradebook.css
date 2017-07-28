@@ -1,0 +1,104 @@
+@charset 'UTF-8';
+@import url('../jquery.dataTables.min.css');
+@import url('../dataTables.responsive.css');
+
+.va_middle {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+.gradebook__avatar {
+    background-color: #fff;
+    margin: auto;
+    max-width: 6em;
+    max-height: 8em;
+    padding: 0.1em;
+}
+.gradebook__summary_item {
+    padding: 0 0.8em 0.4em;
+    margin: 0 0.4em;
+}
+.gradebook__summary_val {
+    font-size: 1.2em;
+    white-space: nowrap;
+    display: table-cell !important;
+}
+.gradebook__summary_str {
+    font-size:0.8em;
+    font-weight:400;
+}
+.gradebook__summary_table {
+    display: inline-block;
+}
+.gradebook__summary_table td {
+    padding: 0.2em 0.25em;
+}
+.gradebook__summary_table tr:not(:last-child) {
+    border-bottom: 1px solid #eee;
+}
+.ui-tabs-panel {
+    padding: 0 0.2em !important;
+}
+.ui-widget-header {
+    background: none !important;
+}
+.ui-widget-content {
+    border: none !important;
+    background-color: transparent !important;
+}
+table.tabl_gb td:first-child{
+    text-align: left;
+}
+table.tabl_gb tr:hover{
+    background: #f5f5f5;
+}
+table.tabl_gb td {
+    font-weight: normal;
+    text-align:center;
+}
+table.tabl_gb th {
+    text-align:center;
+    font-weight:400 !important;
+    line-height:1em;
+    background-color: #dedede;
+}
+table.dataTable.dtr-inline.collapsed .moduleNumber td:first-child::before,
+table.dataTable.dtr-inline.collapsed .moduleNumber th:first-child::before {
+    content: none;
+}
+table.dataTable.dtr-inline.collapsed tbody td:first-child::before,
+table.dataTable.dtr-inline.collapsed tbody th:first-child::before{
+    border: none;
+    border-radius: 0;
+}
+table.tabl_gb td, table.tabl_gb th {
+    border: 1px solid #777;
+}
+table.tabl_gb tr {
+    border: 1px solid #777 !important;
+}
+tr.moduleNumber td:not(:first-child){
+    border-left: none !important;
+}
+tr.moduleNumber td:not(:last-child){
+    border-right: none !important;
+}
+tr.moduleNumber td{
+    background: #dedede;
+    color: black;
+    font-weight: bold;
+    padding: 0.8em;
+}
+
+.gradebook__avatar_block {
+    text-align: right;
+}
+.gradebook__summary_block {
+    text-align: left;
+}
+@media screen and (max-width: 512px) { /* 480 + 2*16 (padding-left, padding-right: 16px ) */
+    .gradebook__avatar_block, .gradebook__summary_block {
+        text-align: center;
+    }
+}
+
